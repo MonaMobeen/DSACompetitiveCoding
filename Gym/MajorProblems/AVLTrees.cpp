@@ -63,6 +63,14 @@ Node *leftRotate(Node *x) {
   return y;
 }
 
+
+
+ 
+
+
+
+
+
  
 int getBalanceFactor(Node *N) {
   if (N == NULL)
@@ -196,3 +204,12 @@ int main() {
   cout << "After deleting " << endl;
   printTree(root, "", true);
 }
+
+
+
+
+
+
+
+
+ 
