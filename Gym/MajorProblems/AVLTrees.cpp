@@ -61,17 +61,7 @@ Node *leftRotate(Node *x) {
           height(y->right)) +
         1;
   return y;
-}
-
-
-
- 
-
-
-
-
-
- 
+}  
 int getBalanceFactor(Node *N) {
   if (N == NULL)
     return 0;
@@ -89,7 +79,6 @@ Node *insertNode(Node *node, int key) {
     node->right = insertNode(node->right, key);
   else
     return node;
- 
   node->height = 1 + max(height(node->left),
                height(node->right));
   int balanceFactor = getBalanceFactor(node);
@@ -117,6 +106,8 @@ Node *nodeWithMimumValue(Node *node) {
   Node *current = node;
   while (current->left != NULL)
     current = current->left;
+
+  
   return current;
 }
 
@@ -129,7 +120,7 @@ Node *deleteNode(Node *root, int key) {
     root->left = deleteNode(root->left, key);
   else if (key > root->key)
     root->right = deleteNode(root->right, key);
-  else {
+  else {    
     if ((root->left == NULL) ||
       (root->right == NULL)) {
       Node *temp = root->left ? root->left : root->right;
@@ -144,8 +135,8 @@ Node *deleteNode(Node *root, int key) {
       root->key = temp->key;
       root->right = deleteNode(root->right,
                    temp->key);
-    }
-  }
+    
+ 
 
   if (root == NULL)
     return root;
@@ -157,6 +148,8 @@ Node *deleteNode(Node *root, int key) {
     if (getBalanceFactor(root->left) >= 0) {
       return rightRotate(root);
     } else {
+                      
+
       root->left = leftRotate(root->left);
       return rightRotate(root);
     }
@@ -170,7 +163,7 @@ Node *deleteNode(Node *root, int key) {
     }
   }
   return root;
-}
+}     
 
  
 void printTree(Node *root, string indent, bool last) {
@@ -203,13 +196,4 @@ int main() {
   root = deleteNode(root, 13);
   cout << "After deleting " << endl;
   printTree(root, "", true);
-}
-
-
-
-
-
-
-
-
- 
+}                            

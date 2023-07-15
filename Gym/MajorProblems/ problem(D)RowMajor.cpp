@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
  
-char s[1000001];
+char s[101];
 int main() {
     int i;
     int t,n;
